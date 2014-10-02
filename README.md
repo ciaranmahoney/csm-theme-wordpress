@@ -1,4 +1,4 @@
-CSM WordPress Theme
+CSM Minimal WordPress Theme
 ====
 
 A minimal WordPress theme with some basic customization options. I used Jared Erikson's [Less](https://github.com/alliswell/Less) as a framework and stripped out stuff that I didn't want. Then I added Font Awesome, an options page, lightweight social sharing (no js!) and a few other things to make it pretty!
@@ -19,7 +19,14 @@ I would love feedback and feature requests! [Tweet me up!](https://twitter.com/c
 - 5 most recent posts listed after each post.
 
 ##Screenshots
+**Pink**
 ![Pink screenshot](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/pink-screenshot.jpg)
+
+**Blue**
 ![Blue screenshot](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/blue-screenshot.jpg)
+
+**Grey**
 ![Grey screenshot](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/grey-screenshot.jpg)
+
+**Theme Options**
 ![Options page](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/options-screenshot.jpg)
