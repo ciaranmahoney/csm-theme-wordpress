@@ -5,6 +5,8 @@ A minimal WordPress theme with some basic customization options. I used Jared Er
 
 The options page allows you to choose a base color (blue, pink or grey), add social profiles, header and favicon images and a footer copyright.
 
+I would love feedback and feature requests! [Tweet me up!](https://twitter.com/ciaransm)
+
 ##Features:
 - Responsive
 - Minimal design to show off your content.
@@ -21,5 +23,3 @@ The options page allows you to choose a base color (blue, pink or grey), add soc
 ![Blue screenshot](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/blue-screenshot.jpg)
 ![Grey screenshot](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/grey-screenshot.jpg)
 ![Options page](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/options-screenshot.jpg)
-
-I would love feedback and feature requests! [Tweet me up!](https://twitter.com/ciaransm)
