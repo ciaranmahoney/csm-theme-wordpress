@@ -14,7 +14,7 @@ I would love feedback and feature requests! [Tweet me up!](https://twitter.com/c
 - Social icons in the header (currently supports Twitter, Instagram and Github).
 - Three color options – blue, pink and grey.
 - Copyright option for footer
-- [Lightweight social sharing without javascript](http://ciaranmahoney.me/lightweight-social-sharing-buttons-for-wordpress-without-javascript/6503). (Currently supports sharing to twitter, Facebook and Google Plus)
+- [Lightweight social sharing without javascript](http://ciaranmahoney.me/lightweight-social-sharing-buttons-for-wordpress-without-javascript/6503). (Currently supports sharing to twitter, Facebook and Google Plus).
 - [Font awesome icons](http://fortawesome.github.io/Font-Awesome/).
 - 5 most recent posts listed after each post.
 
