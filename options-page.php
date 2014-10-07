@@ -78,6 +78,15 @@ function csm_theme_settings_init(  ) {
 		'csm_theme_theme_section' 
 	);
 
+	//Behance image settings field
+	add_settings_field( 
+		'csm_theme_text_field_behance', 
+		__( 'Behance Username', 'csm_theme_options_wp' ), 
+		'csm_theme_text_field_behance_render', 
+		'themePage', 
+		'csm_theme_theme_section' 
+	);
+
 	//Copyright settings field
 	add_settings_field( 
 		'csm_theme_text_field_copyright', 
@@ -150,6 +159,15 @@ function csm_theme_text_field_instagram_render(  ) {
 	$options = get_option( 'csm_theme_settings' );
 	?>
 	<input type='text' class="csm-instagram-input" name='csm_theme_settings[csm_theme_text_field_instagram]' size='50' placeholder='Instagram Username (eg. ciaranmahoney)' value='<?php echo $options['csm_theme_text_field_instagram']; ?>'>
+	<?php
+
+}
+
+function csm_theme_text_field_behance_render(  ) { 
+
+	$options = get_option( 'csm_theme_settings' );
+	?>
+	<input type='text' class="csm-behance-input" name='csm_theme_settings[csm_theme_text_field_behance]' size='50' placeholder='Behance Username (eg. ciaranmahoney)' value='<?php echo $options['csm_theme_text_field_behance']; ?>'>
 	<?php
 
 }
@@ -241,15 +259,22 @@ function csm_theme_insert_social_links() {
 
 	//Add Github icon
 	if($options["csm_theme_text_field_github"] != ""){
-		echo '<li id="twitter-header-link" class="menu-item menu-item-type-custom menu-item-object-custom twitter-header-link ">
+		echo '<li id="github-header-link" class="menu-item menu-item-type-custom menu-item-object-custom twitter-header-link ">
 				<a href="https://github.com/' . $options["csm_theme_text_field_github"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/github28.png" /></a>
 			</li>';
 	}
 
 	//Add Instagram icon
 	if($options["csm_theme_text_field_instagram"] != ""){
-		echo '<li id="twitter-header-link" class="menu-item menu-item-type-custom menu-item-object-custom twitter-header-link ">
+		echo '<li id="instagram-header-link" class="menu-item menu-item-type-custom menu-item-object-custom instagram-header-link ">
 				<a href="https://instagram.com/' . $options["csm_theme_text_field_instagram"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/instagram28.png" /></a>
+			</li>';
+	}
+
+	//Add Behance icon
+	if($options["csm_theme_text_field_behance"] != ""){
+		echo '<li id="behance-header-link" class="menu-item menu-item-type-custom menu-item-object-custom behance-header-link ">
+				<a href="https://behance.net/' . $options["csm_theme_text_field_behance"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/behance28.png" /></a>
 			</li>';
 	}
 
