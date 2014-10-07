@@ -87,6 +87,15 @@ function csm_theme_settings_init(  ) {
 		'csm_theme_theme_section' 
 	);
 
+	//LinkedIn image settings field
+	add_settings_field( 
+		'csm_theme_text_field_linkedin', 
+		__( 'LinkedIn Username', 'csm_theme_options_wp' ), 
+		'csm_theme_text_field_linkedin_render', 
+		'themePage', 
+		'csm_theme_theme_section' 
+	);
+
 	//Copyright settings field
 	add_settings_field( 
 		'csm_theme_text_field_copyright', 
@@ -172,6 +181,15 @@ function csm_theme_text_field_behance_render(  ) {
 
 }
 
+function csm_theme_text_field_linkedin_render(  ) { 
+
+	$options = get_option( 'csm_theme_settings' );
+	?>
+	<input type='text' class="csm-linkedin-input" name='csm_theme_settings[csm_theme_text_field_linkedin]' size='50' placeholder='LinkedIn Username (eg. ciaranmahoney)' value='<?php echo $options['csm_theme_text_field_linkedin']; ?>'>
+	<?php
+
+}
+
 function csm_theme_select_field_base_color_render(  ) { 
 
 	$options = get_option( 'csm_theme_settings' );
@@ -252,29 +270,36 @@ function csm_theme_insert_social_links() {
 
 	//Add Twitter icon
 	if($options["csm_theme_text_field_twitter"] != ""){
-		echo '<li id="twitter-header-link" class="menu-item menu-item-type-custom menu-item-object-custom twitter-header-link ">
+		echo '<li id="twitter-header-link" class="menu-item menu-item-type-custom menu-item-object-custom">
 				<a href="https://twitter.com/' . $options["csm_theme_text_field_twitter"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/twitter28.png" /></a>
 			</li>';
 	}
 
 	//Add Github icon
 	if($options["csm_theme_text_field_github"] != ""){
-		echo '<li id="github-header-link" class="menu-item menu-item-type-custom menu-item-object-custom twitter-header-link ">
+		echo '<li id="github-header-link" class="menu-item menu-item-type-custom menu-item-object-custom">
 				<a href="https://github.com/' . $options["csm_theme_text_field_github"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/github28.png" /></a>
 			</li>';
 	}
 
 	//Add Instagram icon
 	if($options["csm_theme_text_field_instagram"] != ""){
-		echo '<li id="instagram-header-link" class="menu-item menu-item-type-custom menu-item-object-custom instagram-header-link ">
+		echo '<li id="instagram-header-link" class="menu-item menu-item-type-custom menu-item-object-custom">
 				<a href="https://instagram.com/' . $options["csm_theme_text_field_instagram"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/instagram28.png" /></a>
 			</li>';
 	}
 
 	//Add Behance icon
 	if($options["csm_theme_text_field_behance"] != ""){
-		echo '<li id="behance-header-link" class="menu-item menu-item-type-custom menu-item-object-custom behance-header-link ">
+		echo '<li id="behance-header-link" class="menu-item menu-item-type-custom menu-item-object-custom">
 				<a href="https://behance.net/' . $options["csm_theme_text_field_behance"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/behance28.png" /></a>
+			</li>';
+	}
+
+	//Add LinkedIn icon
+	if($options["csm_theme_text_field_linkedin"] != ""){
+		echo '<li id="linkedin-header-link" class="menu-item menu-item-type-custom menu-item-object-custom">
+				<a href="http://www.linkedin.com/in/' . $options["csm_theme_text_field_linkedin"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/linkedin28.png" /></a>
 			</li>';
 	}
 
