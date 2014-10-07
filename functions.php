@@ -1,7 +1,7 @@
 <?php
 
 // Define the version as a constant so we can easily replace it throughout the theme
-define( 'CSM_VERSION', 0.2 );
+define( 'CSM_VERSION', 0.3 );
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -30,7 +30,7 @@ register_nav_menus(
 function csm_scripts()  {
 
 	// theme styles
-	wp_enqueue_style( 'csm-style', get_template_directory_uri() . '/style.min.css', '10000', CSM_VERSION);
+	wp_enqueue_style( 'csm-style', get_template_directory_uri() . '/style.css', '10000', CSM_VERSION);
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 }
 add_action( 'wp_enqueue_scripts', 'csm_scripts' );

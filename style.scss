@@ -1,23 +1,16 @@
 /*
 Theme Name: CSM
 Theme URI: http://ciaranmahoney.me/csm-minimal-wordpress-theme
-Author: Ciaran Mahoney, based on Less by Jared Erickson
+Author: Ciaran Mahoney, 
 Author URI: http://ciaranmahoney.me
-Description: Minimal theme
-Version: 0.2
+Description: Minimal theme with some basic customization options. Based on Less by Jared Erickson.
+Version: 0.3
 License: GNU General Public License
-
 */
-/******************************************************************/
+
 /*****************************************************************/
-/******************************************************************/
-/*****************************************************************/
-/**** THIS IS THE WORKING FILE - IT IS NOT LOADED IN THE THEME******/
-/* You should minify and save as style.min.css as this is the file */
-/* Loaded in header.php
-/******************************************************************/
-/*****************************************************************/
-/******************************************************************/
+/* THIS IS THE WORKING SCSS FILE - IT IS NOT LOADED IN THE THEME
+/* You should compile to style.min.css
 /*****************************************************************/
 
 /* Reset
@@ -445,7 +438,7 @@ body a, header a {
 /* Options Page Color Choice */
 
 .csm_base_color_blue a {
-  color: #589ddd;
+  color:  #589ddd;
 }
 
 .csm_base_color_pink a {
@@ -483,18 +476,20 @@ body a, header a {
 
 /* Alignment */
 
-.alignleft {
+@mixin alignment {
   display: inline;
-  float: left;
   margin-right: 1.5em;
   max-width: 100%;
 }
 
+.alignleft {
+  @include alignment;
+  float: left;
+}
+
 .alignright {
-  display: inline;
   float: right;
-  margin-left: 1.5em;
-  max-width: 100%;
+  @include alignment;
 }
 
 .aligncenter {
