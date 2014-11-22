@@ -32,7 +32,7 @@ register_nav_menus(
 );
 
 /*-----------------------------------------------------------------------------------*/
-/* Enque Styles and Scripts
+/* Enqueue Styles and Scripts
 /*-----------------------------------------------------------------------------------*/
 
 function csm_scripts()  {
@@ -43,17 +43,23 @@ function csm_scripts()  {
 }
 add_action( 'wp_enqueue_scripts', 'csm_scripts' );
 
-// Adding Featured Images
+/*-----------------------------------------------------------------------------------*/
+/* Adding featured images
+/*-----------------------------------------------------------------------------------*/
 add_theme_support( 'post-thumbnails' );
 
-// Replaces the excerpt "more" text by a link
+/*-----------------------------------------------------------------------------------*/
+/* Replaces the default excerpt link with a read more link
+/*-----------------------------------------------------------------------------------*/
 function new_excerpt_more($more) {
        global $post;
 	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> ... read more</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-//Removing Junk from header
+/*-----------------------------------------------------------------------------------*/
+/* //Removing Junk from header
+/*-----------------------------------------------------------------------------------*/
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wlwmanifest_link' );
 remove_action( 'wp_head', 'wp_generator' );
@@ -62,7 +68,9 @@ remove_action( 'wp_head', 'index_rel_link' );
 remove_action( 'wp_head', 'adjacent_posts_rel_link' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
-//Social Sharing Function
+/*-----------------------------------------------------------------------------------*/
+/* Including Social Sharing Functionality
+/*-----------------------------------------------------------------------------------*/
 function social_sharing() {
 	include('social-sharing.php');
 }
