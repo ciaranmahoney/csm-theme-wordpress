@@ -10,7 +10,6 @@ function csm_theme_add_admin_menu(  ) {
 
 }
 
-
 function csm_theme_settings_exist(  ) { 
 
 	if( false == get_option( 'csm_theme_settings' ) ) { 
@@ -20,7 +19,6 @@ function csm_theme_settings_exist(  ) {
 	}
 
 }
-
 
 function csm_theme_settings_init(  ) { 
 
@@ -96,6 +94,15 @@ function csm_theme_settings_init(  ) {
 		'csm_theme_theme_section' 
 	);
 
+	//Facebook image settings field
+	add_settings_field( 
+		'csm_theme_text_field_facebook', 
+		__( 'Facebook Username', 'csm_theme_options_wp' ), 
+		'csm_theme_text_field_facebook_render', 
+		'themePage', 
+		'csm_theme_theme_section' 
+	);
+
 	//Copyright settings field
 	add_settings_field( 
 		'csm_theme_text_field_copyright', 
@@ -115,7 +122,6 @@ function csm_theme_settings_init(  ) {
 	);
 
 }
-
 
 function csm_theme_text_field_header_image_render(  ) { 
 
@@ -186,6 +192,15 @@ function csm_theme_text_field_linkedin_render(  ) {
 	$options = get_option( 'csm_theme_settings' );
 	?>
 	<input type='text' class="csm-linkedin-input" name='csm_theme_settings[csm_theme_text_field_linkedin]' size='50' placeholder='LinkedIn Username (eg. ciaranmahoney)' value='<?php echo $options['csm_theme_text_field_linkedin']; ?>'>
+	<?php
+
+}
+
+function csm_theme_text_field_facebook_render(  ) { 
+
+	$options = get_option( 'csm_theme_settings' );
+	?>
+	<input type='text' class="csm-facebook-input" name='csm_theme_settings[csm_theme_text_field_facebook]' size='50' placeholder='Facebook Profile Full URL  (eg. https://www.facebook.com/georgehtakei)' value='<?php echo $options['csm_theme_text_field_facebook']; ?>'>
 	<?php
 
 }
@@ -300,6 +315,13 @@ function csm_theme_insert_social_links() {
 	if($options["csm_theme_text_field_linkedin"] != ""){
 		echo '<li id="linkedin-header-link" class="menu-item menu-item-type-custom menu-item-object-custom">
 				<a href="http://www.linkedin.com/in/' . $options["csm_theme_text_field_linkedin"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/linkedin28.png" /></a>
+			</li>';
+	}
+
+	//Add Facebook icon
+	if($options["csm_theme_text_field_facebook"] != ""){
+		echo '<li id="facebook-header-link" class="menu-item menu-item-type-custom menu-item-object-custom">
+				<a href="' . $options["csm_theme_text_field_facebook"] . '" target="_blank"><img class="menu-social-icon" src="' . get_template_directory_uri() . '/img/facebook28.png" /></a>
 			</li>';
 	}
 
