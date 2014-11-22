@@ -33,7 +33,7 @@
 	<div class="container">
 
 		<div class="gravatar hidden-mobile">
-			<img src='<?php echo $options['csm_theme_text_field_header_image'];?>' height="135px" width="135px"/>
+			<img src='<?php if ($options['csm_theme_text_field_header_image'] != "") {echo $options['csm_theme_text_field_header_image'];} else { echo get_template_directory_uri() . "/img/gravatar-default.png";} ?>' height="135px" width="135px"/>
 		</div><!--/ author -->
 
 		<div id="brand">
