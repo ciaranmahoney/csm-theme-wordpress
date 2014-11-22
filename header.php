@@ -12,7 +12,8 @@
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="shortcut icon" href="<?php echo $options['csm_theme_text_field_favicon_image'];?>"/>
+<link rel="shortcut icon" href="<?php if ($options['csm_theme_text_field_favicon_image'] != "") {echo $options['csm_theme_text_field_favicon_image'];} else { echo get_template_directory_uri() . "/img/favicon.png";} ?>"/>
+
 <link href='http://fonts.googleapis.com/css?family=Roboto:300,500|Junge' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>

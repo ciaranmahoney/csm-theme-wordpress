@@ -97,7 +97,7 @@ function csm_theme_settings_init(  ) {
 	//Facebook image settings field
 	add_settings_field( 
 		'csm_theme_text_field_facebook', 
-		__( 'Facebook Username', 'csm_theme_options_wp' ), 
+		__( 'Facebook Full URL', 'csm_theme_options_wp' ), 
 		'csm_theme_text_field_facebook_render', 
 		'themePage', 
 		'csm_theme_theme_section' 
@@ -200,7 +200,7 @@ function csm_theme_text_field_facebook_render(  ) {
 
 	$options = get_option( 'csm_theme_settings' );
 	?>
-	<input type='text' class="csm-facebook-input" name='csm_theme_settings[csm_theme_text_field_facebook]' size='50' placeholder='Facebook Profile Full URL  (eg. https://www.facebook.com/georgehtakei)' value='<?php echo $options['csm_theme_text_field_facebook']; ?>'>
+	<input type='text' class="csm-facebook-input" name='csm_theme_settings[csm_theme_text_field_facebook]' size='50' placeholder='Facebook Full URL  (eg. https://www.facebook.com/georgehtakei)' value='<?php echo $options['csm_theme_text_field_facebook']; ?>'>
 	<?php
 
 }
