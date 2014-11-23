@@ -281,7 +281,7 @@ function csm_theme_insert_social_links() {
 	$options = get_option('csm_theme_settings');
 
 	//start social icons ul
-	echo '<div class="menu-social-icons-container"><ul>';
+	echo '<div class="menu-social-icons-container"><ul class="menu-social-icons-ul">';
 
 	//Add Twitter icon
 	if($options["csm_theme_text_field_twitter"] != ""){

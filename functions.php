@@ -1,7 +1,7 @@
 <?php
 
 // Define the version as a constant so we can easily replace it throughout the theme
-define( 'CSM_VERSION', 0.3 );
+define( 'CSM_VERSION', 0.2 );
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -36,8 +36,6 @@ register_nav_menus(
 /*-----------------------------------------------------------------------------------*/
 
 function csm_scripts()  {
-
-	// theme styles
 	wp_enqueue_style( 'csm-style', get_template_directory_uri() . '/style.css', '10000', CSM_VERSION);
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 }
@@ -58,7 +56,7 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 /*-----------------------------------------------------------------------------------*/
-/* //Removing Junk from header
+/* Removing Junk from header
 /*-----------------------------------------------------------------------------------*/
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wlwmanifest_link' );
