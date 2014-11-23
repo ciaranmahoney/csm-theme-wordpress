@@ -32,6 +32,11 @@ I would love feedback and feature requests! [Tweet me up!](https://twitter.com/c
 **Theme Options**
 ![Options page](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/options-screenshot.jpg)
 
+**Dropdown Menu**
+![Options page](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/dropdown-3levels.png)
+
+![Options page](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/dropdown.png)
+
 ## Changelog
 
 **v0.2**
