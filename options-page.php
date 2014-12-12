@@ -121,6 +121,15 @@ function csm_theme_settings_init(  ) {
 		'csm_theme_theme_section' 
 	);
 
+	//Head action hook 
+	add_settings_field( 
+		'csm_theme_text_area_head_hook', 
+		__( 'Insert into wp_head hook (just before closing head tag)', 'csm_theme_options_wp' ), 
+		'csm_theme_text_area_head_hook_render', 
+		'themePage', 
+		'csm_theme_theme_section' 
+	);
+
 }
 
 function csm_theme_text_field_header_image_render(  ) { 
@@ -219,6 +228,15 @@ function csm_theme_select_field_base_color_render(  ) {
 
 }
 
+function csm_theme_text_area_head_hook_render(  ) { 
+
+	$options = get_option( 'csm_theme_settings' );
+	?>
+	<textarea class="csm-head-hook-input" name='csm_theme_settings[csm_theme_text_area_head_hook]' rows="10" cols="50%" placeholder='You can insert html or js into the wp_head hook here.'><?php echo $options['csm_theme_text_area_head_hook']; ?></textarea>
+	<?php
+
+}
+
 function csm_theme_theme_section_callback(  ) { 
 
 	echo __( 'Got questions? Get hold of me on Twitter <a href="https://twitter.com/ciaransm" target="_blank">@ciaransm</a>', 'csm_theme_options_wp' );
@@ -233,12 +251,19 @@ function csm_theme_settings_validation($input){
     foreach( $input as $key => $value ) {
          
         // Check to see if the current option has a value. If so, process it.
-        if( isset( $input[$key] ) ) {
+        if(isset($input[$key])){
+
+        	if($key == "csm_theme_text_area_head_hook") {
          
-            // Strip all HTML and PHP tags and properly handle quoted strings
-            $output[$key] = strip_tags( stripslashes( $input[ $key ] ) );
+            // Don't strip tags from wp_head hook
+        	$output[$key] = $input[$key];
              
-        } // end if
+	        } else {
+	        	// Strip all HTML and PHP tags and properly handle quoted strings
+	            $output[$key] = strip_tags( stripslashes( $input[ $key ] ) );
+	        }
+
+	     }// end if
          
     } // end foreach
      
@@ -274,6 +299,14 @@ function csm_theme_base_color_class( $classes ) {
 	$classes[] = 'csm_base_color_' . $options['csm_theme_select_field_base_color'];
 	// return the $classes array
 	return $classes;
+}
+
+add_action('wp_head','csm_head_hook_html');
+function csm_head_hook_html () {
+	$options = get_option('csm_theme_settings');
+	if($options['csm_theme_text_area_head_hook'] != "") {
+		echo $options['csm_theme_text_area_head_hook'];
+	}
 }
 
 //Add Social links to header if applicable
