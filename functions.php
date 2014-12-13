@@ -1,7 +1,7 @@
 <?php
 
 // Define the version as a constant so we can easily replace it throughout the theme
-define( 'CSM_VERSION', 0.21 );
+define( 'CSM_VERSION', 0.3 );
 
 
 /*-----------------------------------------------------------------------------------*/
