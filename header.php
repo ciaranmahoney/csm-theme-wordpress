@@ -28,6 +28,7 @@
 <![endif]-->
 
 <body <?php body_class(); ?>>
+<?php do_action('csm_after_body'); ?>
 
 <header id="masthead" class="site-header" role="banner">
 	<div class="container">

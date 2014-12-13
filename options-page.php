@@ -130,10 +130,19 @@ function csm_theme_settings_init(  ) {
 		'csm_theme_theme_section' 
 	);
 
+	//After body action hook (custom hook)
+	add_settings_field( 
+		'csm_theme_text_area_after_body_hook', 
+		__( 'Insert into csm_after_body hook (just after opening body tag)', 'csm_theme_options_wp' ), 
+		'csm_theme_text_area_after_body_hook_render', 
+		'themePage', 
+		'csm_theme_theme_section' 
+	);
+
 	//Footer action hook  (wp_footer)
 	add_settings_field( 
 		'csm_theme_text_area_footer_hook', 
-		__( 'Insert into wp_footer hook (just before closing body tag)', 'csm_theme_options_wp' ), 
+		__( 'Insert into wp_footer hook (just after opening footer tag)', 'csm_theme_options_wp' ), 
 		'csm_theme_text_area_footer_hook_render', 
 		'themePage', 
 		'csm_theme_theme_section' 
@@ -254,6 +263,14 @@ function csm_theme_text_area_footer_hook_render(  ) {
 
 }
 
+function csm_theme_text_area_after_body_hook_render(  ) { 
+	$options = get_option( 'csm_theme_settings' );
+	?>
+	<textarea class="csm-after-body-hook-input" name='csm_theme_settings[csm_theme_text_area_after_body_hook]' rows="10" cols="50%" placeholder='You can insert html or js just after the opening body tag here.'><?php if (isset($options['csm_theme_text_area_after_body_hook'])) {echo $options['csm_theme_text_area_after_body_hook'];}?></textarea>
+	<?php
+
+}
+
 function csm_theme_theme_section_callback(  ) { 
 
 	echo __( 'Got questions? Get hold of me on Twitter <a href="https://twitter.com/ciaransm" target="_blank">@ciaransm</a>', 'csm_theme_options_wp' );
@@ -270,7 +287,7 @@ function csm_theme_settings_validation($input){
         // Check to see if the current option has a value. If so, process it.
         if(isset($input[$key])){
 
-        	if($key == "csm_theme_text_area_head_hook" || $key == "csm_theme_text_area_footer_hook"){
+        	if($key == "csm_theme_text_area_after_body_hook" || $key == "csm_theme_text_area_head_hook" || $key == "csm_theme_text_area_footer_hook"){
 	            // Don't strip tags from wp_head hook
 	        	$output[$key] = $input[$key];
              
@@ -325,6 +342,22 @@ function csm_head_hook_html () {
 	}
 }
 add_action('wp_head','csm_head_hook_html');
+
+function csm_after_body_hook_html () {
+	$options = get_option('csm_theme_settings');
+	if($options['csm_theme_text_area_after_body_hook'] != "") {
+		echo $options['csm_theme_text_area_after_body_hook'];
+	}
+}
+add_action('csm_after_body','csm_after_body_hook_html');
+
+function csm_footer_hook_html () {
+	$options = get_option('csm_theme_settings');
+	if($options['csm_theme_text_area_footer_hook'] != "") {
+		echo $options['csm_theme_text_area_footer_hook'];
+	}
+}
+add_action('wp_footer','csm_footer_hook_html');
 
 //Add Social links to header if applicable
 function csm_theme_insert_social_links() {
