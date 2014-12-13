@@ -3,7 +3,7 @@ CSM Minimal WordPress Theme
 
 A minimal WordPress theme with some basic customization options. I used Jared Erikson's [Less](https://github.com/alliswell/Less) as a framework and stripped out stuff that I didn't want. Then I added Font Awesome, an options page, lightweight social sharing (no js!) and a few other things to make it pretty!
 
-The options page allows you to choose a base color (blue, pink or grey), add social profiles, header and favicon images and a footer copyright.
+The options page allows you to choose a base color (blue, pink or grey), add social profiles, header and favicon images and a footer copyright. I also added the ability to insert js or html directly from the options page, without digging into theme files. I use this for inserting Google Tag Manager, MixPanel and Heap Analytics tracking javascript tags. It does not support php.
 
 I would love feedback and feature requests! [Tweet me up!](https://twitter.com/ciaransm)
 
@@ -18,6 +18,7 @@ I would love feedback and feature requests! [Tweet me up!](https://twitter.com/c
 - [Font awesome icons](http://fortawesome.github.io/Font-Awesome/).
 - 5 most recent posts listed after each post.
 - Simple, CSS only dropdown menu that supports up 3 levels.
+- Ability to insert custom html or js in to three areas: wp_head (just before closing head tag), wp_footer (just after opening footer tag) and csm_after_body (a custom hook just after the opening body tag). 
 
 ##Screenshots
 **Pink**
@@ -39,6 +40,10 @@ I would love feedback and feature requests! [Tweet me up!](https://twitter.com/c
 ![Options page](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/dropdown.png)
 
 ## Changelog
+
+**v0.3**
+- Added action hook fields in the options page to allow insertion of js or html.
+- Added custom action hook - csm_after_body - which hooks just after the opening body tag.
 
 **v0.2**
 - Added dropdown menu functionality to support up to three levels.

@@ -159,7 +159,6 @@ function csm_theme_text_field_header_image_render(  ) {
 
 }
 
-
 function csm_theme_text_field_favicon_image_render(  ) { 
 
 	$options = get_option( 'csm_theme_settings' );
