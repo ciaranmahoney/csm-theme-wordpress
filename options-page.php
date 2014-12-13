@@ -121,11 +121,20 @@ function csm_theme_settings_init(  ) {
 		'csm_theme_theme_section' 
 	);
 
-	//Head action hook 
+	//Head action hook (wp_head)
 	add_settings_field( 
 		'csm_theme_text_area_head_hook', 
 		__( 'Insert into wp_head hook (just before closing head tag)', 'csm_theme_options_wp' ), 
 		'csm_theme_text_area_head_hook_render', 
+		'themePage', 
+		'csm_theme_theme_section' 
+	);
+
+	//Footer action hook  (wp_footer)
+	add_settings_field( 
+		'csm_theme_text_area_footer_hook', 
+		__( 'Insert into wp_footer hook (just before closing body tag)', 'csm_theme_options_wp' ), 
+		'csm_theme_text_area_footer_hook_render', 
 		'themePage', 
 		'csm_theme_theme_section' 
 	);
@@ -232,7 +241,15 @@ function csm_theme_text_area_head_hook_render(  ) {
 
 	$options = get_option( 'csm_theme_settings' );
 	?>
-	<textarea class="csm-head-hook-input" name='csm_theme_settings[csm_theme_text_area_head_hook]' rows="10" cols="50%" placeholder='You can insert html or js into the wp_head hook here.'><?php echo $options['csm_theme_text_area_head_hook']; ?></textarea>
+	<textarea class="csm-head-hook-input" name='csm_theme_settings[csm_theme_text_area_head_hook]' rows="10" cols="50%" placeholder='You can insert html or js into the wp_head hook here.'><?php if(isset($options['csm_theme_text_area_head_hook'])) {echo $options['csm_theme_text_area_head_hook'];} ?></textarea>
+	<?php
+
+}
+
+function csm_theme_text_area_footer_hook_render(  ) { 
+	$options = get_option( 'csm_theme_settings' );
+	?>
+	<textarea class="csm-footer-hook-input" name='csm_theme_settings[csm_theme_text_area_footer_hook]' rows="10" cols="50%" placeholder='You can insert html or js into the wp_footer hook here.'><?php if (isset($options['csm_theme_text_area_footer_hook'])) {echo $options['csm_theme_text_area_footer_hook'];}?></textarea>
 	<?php
 
 }
@@ -253,10 +270,9 @@ function csm_theme_settings_validation($input){
         // Check to see if the current option has a value. If so, process it.
         if(isset($input[$key])){
 
-        	if($key == "csm_theme_text_area_head_hook") {
-         
-            // Don't strip tags from wp_head hook
-        	$output[$key] = $input[$key];
+        	if($key == "csm_theme_text_area_head_hook" || $key == "csm_theme_text_area_footer_hook"){
+	            // Don't strip tags from wp_head hook
+	        	$output[$key] = $input[$key];
              
 	        } else {
 	        	// Strip all HTML and PHP tags and properly handle quoted strings
@@ -301,13 +317,14 @@ function csm_theme_base_color_class( $classes ) {
 	return $classes;
 }
 
-add_action('wp_head','csm_head_hook_html');
+
 function csm_head_hook_html () {
 	$options = get_option('csm_theme_settings');
 	if($options['csm_theme_text_area_head_hook'] != "") {
 		echo $options['csm_theme_text_area_head_hook'];
 	}
 }
+add_action('wp_head','csm_head_hook_html');
 
 //Add Social links to header if applicable
 function csm_theme_insert_social_links() {
