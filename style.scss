@@ -936,6 +936,10 @@ input.csm-twitter-input {
   text-indent: 40px;
 }
 
+.hidden-desktop {
+  display: none;
+}
+
 /* Media Queries for responsivenessssssss
 -------------------------------------------------------------- */
 @media (max-width: 767px) {
@@ -951,6 +955,11 @@ input.csm-twitter-input {
   .hidden-mobile {
     display: none !important;
   }
+
+  .hidden-desktop {
+    display: block !important;
+  }
+
   article .title {
     font-size: 30px;
     font-size: 3rem;

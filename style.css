@@ -715,6 +715,9 @@ input.csm-twitter-input {
   background: no-repeat 10px url("http://cdn1.ciaranmahoney.me/wp-content/themes/csm/img/favicon.png");
   text-indent: 40px; }
 
+.hidden-desktop {
+  display: none; }
+
 /* Media Queries for responsivenessssssss
 -------------------------------------------------------------- */
 @media (max-width: 767px) {
@@ -727,6 +730,9 @@ input.csm-twitter-input {
 
   .hidden-mobile {
     display: none !important; }
+
+  .hidden-desktop {
+    display: block !important; }
 
   article .title {
     font-size: 30px;
