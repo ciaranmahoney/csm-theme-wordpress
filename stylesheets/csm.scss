@@ -1,0 +1,31 @@
+/*! ********************************
+************************************
+
+Theme Name: CSM
+Theme URI: http://ciaranmahoney.me/csm-minimal-wordpress-theme
+Author: Ciaran Mahoney, 
+Author URI: http://ciaranmahoney.me
+Description: Minimal theme with some basic customization options.
+Version: 0.4
+License: GNU General Public License
+
+************************************
+************************************
+************************************/
+
+// This file compiles to csm.css
+
+// Core variables and mixins
+@import "variables";
+@import "mixins"; 
+
+// Reset
+@import "reset";
+
+// Main CSS
+@import "wpcore";
+@import "responsive";
+@import "typography";
+
+// Components
+@import "buttons";

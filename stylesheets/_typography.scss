@@ -1,0 +1,161 @@
+/* typography and links
+-------------------------------------------------------------- */
+
+/* Header Fonts */
+
+header, .title {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 300;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+  line-height: 71.03999999999999px;
+  font-size: 48px;
+  font-size: 4.8rem;
+}
+
+h2 {
+  line-height: 50.32px;
+  font-size: 34px;
+  font-size: 3.4rem;
+}
+
+h3 {
+  line-height: 41.44px;
+  font-size: 28px;
+  font-size: 2.8rem;
+}
+
+h4 {
+  line-height: 26.64px;
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+/* Text elements */
+
+p {
+  margin-bottom: 1.5em;
+}
+
+ul, ol {
+  margin: 0 0 1.5em 3em;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5em;
+  border-left: 3px solid #C0C0C0;
+  padding-left: 10px;
+  font-style: italic;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  padding: 1.6em;
+  overflow: auto;
+  max-width: 100%;
+}
+
+
+/* Links */
+
+body a, header a {
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+  text-decoration: none;
+}
+
+/* Options Page Color Choice */
+
+.csm_base_color_blue a {
+  color:  $blue-base;
+}
+
+.csm_base_color_pink a {
+  color: $pink-base;
+}
+
+.csm_base_color_grey a {
+  color: $gray-darker;
+}
+
+.csm_base_color_pink #brand h1 {
+  color: $pink-brand;
+  a {
+    color: $pink-brand;
+  }
+}
+
+.csm_base_color_blue #brand h1 {
+  color: $blue-brand;
+  a {
+    color: $blue-brand;
+  }
+}
+
+.csm_base_color_grey #brand h1 {
+  color: $gray-lighter;
+  a {
+    color: $gray-lighter;
+  }
+}
+
+.csm_base_color_blue a:hover, .csm_base_color_grey a:hover, .csm_base_color_pink a:hover {
+  opacity: 0.6;
+}

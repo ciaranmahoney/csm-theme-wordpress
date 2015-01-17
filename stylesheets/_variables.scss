@@ -1,0 +1,23 @@
+// Variables
+
+// Greys
+$white-color:           #ffffff !default;
+$black-color:           #000 !default;
+$gray-darker:           lighten($black-color, 8) !default;    // #141414
+$gray-dark:             lighten($black-color, 20) !default;   // #333
+$gray:                  lighten($black-color, 33.5) !default; // #555
+$gray-light:            lighten($black-color, 46.7) !default; // #777
+$gray-lighter:          lighten($black-color, 85.5) !default; // #d9d9d9
+
+// Base Colors
+$blue-base:             #589ddd !default;
+$blue-brand:            #99b7d3 !default;
+$pink-base:             #D86DD4 !default;
+$pink-brand:            #d49bcc !default;
+
+// Utility Colors
+$blue-color:            #36ACDB !default;
+$red-color:             #DB3A37 !default;  
+$green-color:           #2EC85F !default;
+$orange-color:          #EF9927 !default; 
+$pink-color:            #E14E6A !default;

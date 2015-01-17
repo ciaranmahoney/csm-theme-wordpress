@@ -1,0 +1,73 @@
+/* Extra Large Screens over 1900 px wide */
+@media (min-width: 1900px) {
+
+}
+
+/* Larger Screens over 801 px wide - this will include tablets in landscape mode and desktop display */
+@media (min-width: 801px) {
+
+  .hidden-desktop {
+    display: none !important;
+  }
+
+} 
+
+/* Tablets up to 800px this will include portrait tablets and large phones --------------------- */
+@media (max-width: 800px) {
+  header {
+    padding: 0;
+    .gravatar {
+      float: none;
+    }
+    hgroup {
+      width: 100%;
+    }
+  }
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  article .title {
+    font-size: 30px;
+    font-size: 3rem;
+    line-height: 45px;
+  }
+  h1 {
+    line-height: 65px;
+    font-size: 38px;
+    font-size: 3.8rem;
+  }
+  h2 {
+    line-height: 45px;
+    font-size: 30px;
+    font-size: 3rem;
+  }
+  h3 {
+    line-height: 37px;
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+  h4 {
+    line-height: 22px;
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+}
+
+/* 320-650px this will include phones in landscape and portrait (except landscape view on iPhone 6, 6+)  -- */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 650px) {
+  /* Styles */
+  body {
+    width: 100%;
+    -webkit-text-size-adjust: 90%;
+    -moz-text-size-adjust: 90%;
+    -ms-text-size-adjust: 90%;
+    text-size-adjust: 90%;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+

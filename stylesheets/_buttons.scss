@@ -1,0 +1,59 @@
+// Buttons
+.btn{
+    margin: 10px;
+    padding: 14px 26px;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 100%;
+    display:inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: 0 none;
+    text-decoration: none;
+
+    &.btn-dark-gray {
+        @include button($gray);
+    }
+
+    &.btn-light-gray {
+        @include button($gray-lighter);
+    }
+
+    &.btn-blue {
+        @include button($blue-color);
+    }
+
+    &.btn-red {
+        @include button($red-color);
+    }
+
+    &.btn-green {
+        @include button($green-color);
+    }
+
+    &.btn-orange {
+        @include button($orange-color);
+    }
+
+    &.btn-pink {
+        @include button($pink-color);
+    }
+
+    &.btn-hollow {
+        background: none;
+        color: $white-color;
+        border: 1px $white-color solid;
+    }   
+
+    &.btn-small{
+        padding: 10px !important;
+        font-size: 0.75em !important;
+        box-shadow: none !important;
+    }
+
+    &.btn-medium{
+        padding: 13px !important;
+        font-size: 1.3rem !important;
+        box-shadow: none !important;
+    }
+}
