@@ -1,4 +1,6 @@
+//
 // Variables
+//
 
 // Greys
 $white-color:           #ffffff !default;
@@ -21,3 +23,15 @@ $red-color:             #DB3A37 !default;
 $green-color:           #2EC85F !default;
 $orange-color:          #EF9927 !default; 
 $pink-color:            #E14E6A !default;
+
+// Typography
+$font-family-body:      "Junge", Georgia, serif !default;
+$font-family-headers:   "Roboto", Arial, sans-serif !default;
+
+$font-weight-body:      100 !default;
+
+$font-size-base:        16px !default;
+$font-size-large:       ceil(($font-size-base * 1.25)) !default; // ~20px
+$font-size-small:       ceil(($font-size-base * 0.85)) !default; // ~14px
+
+

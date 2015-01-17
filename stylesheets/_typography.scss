@@ -1,18 +1,29 @@
-/* typography and links
--------------------------------------------------------------- */
+//
+// Typography and links
+//
 
-/* Header Fonts */
+// Body
+
+body, button, input, select, p {
+  font-family: $font-family-body;
+  line-height: 28.64px;
+  color: $gray;
+  font-size: 1.6rem;
+  font-size: 16px;
+  
+
+}
+// Header Fonts
 
 header, .title {
-  font-family: "Roboto", Arial, sans-serif;
-  font-weight: 300;
+  font-family: $font-family-headers;
 }
 
-/* Headings */
+// Headings
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: $font-family-headers;
   font-weight: 100;
 }
 
@@ -109,6 +120,18 @@ pre {
   max-width: 100%;
 }
 
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
 
 /* Links */
 
@@ -119,6 +142,13 @@ body a, header a {
   -ms-transition: opacity 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out;
   text-decoration: none;
+}
+
+.the-content {
+  a {
+    font-weight: 900;
+    text-decoration: none;
+  }
 }
 
 /* Options Page Color Choice */

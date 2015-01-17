@@ -6,3 +6,15 @@
     border: 1px $button-color solid;
     color: lighten($button-color, 40);
 }
+
+@mixin alignment {
+    display: inline;
+    max-width: 100%;
+    margin: 1rem;
+    margin: 10px;
+}
+
+@mixin font-size ($size-in-rem, $size-in-px) {
+    font-size: $size-in-px;
+    font-size: $size-in-rem;
+}
