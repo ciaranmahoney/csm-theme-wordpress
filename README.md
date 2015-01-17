@@ -19,6 +19,7 @@ I would love feedback and feature requests! [Tweet me up!](https://twitter.com/c
 - 5 most recent posts listed after each post.
 - Simple, CSS only dropdown menu that supports up 3 levels.
 - Ability to insert custom html or js in to three areas: wp_head (just before closing head tag), wp_footer (just after opening footer tag) and csm_after_body (a custom hook just after the opening body tag). 
+- Utility classes for buttons - .btn .btn-small .btn-green/red/orange/pink/light-gray/dark-gray/hollow
 
 ##Screenshots
 **Pink**
@@ -39,7 +40,17 @@ I would love feedback and feature requests! [Tweet me up!](https://twitter.com/c
 
 ![Options page](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/dropdown.png)
 
+**Buttons**
+
+![Button colors small](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/buttons-small.png)
+
+![Button colors default](https://github.com/ciaranmahoney/csm-theme-wordpress/blob/master/screenshots/buttons-default.png)
+
 ## Changelog
+
+**v0.4**
+- Mostly behind the scenes changes that involve refactoring SCSS.
+- Added some utility classes for colors and buttons. these can be used
 
 **v0.3**
 - Added action hook fields in the options page to allow insertion of js or html.
